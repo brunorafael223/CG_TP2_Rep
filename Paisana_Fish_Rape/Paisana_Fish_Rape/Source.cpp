@@ -36,9 +36,10 @@ using namespace std;
 //#define _CRT_SECURE_NO_WARNINGS
 
 #define PI 3.14
-bool createfish = false;
+
 bool left_button_state = 0;
 int fish_index = 0;
+bool fish_click = false;
 vector <AquaElem> fish;
 
 static int h=800, w=1000;
@@ -183,7 +184,12 @@ void init(){
 void move(int v){
 
 	for (int i = 0; i < (int)fish.size(); i++){
-		fish[i].Move();
+		if(i==fish_index && left_button_state){
+			
+		}else{
+			fish[i].Move();
+		}
+			
 	}
 
 	glutPostRedisplay();
@@ -194,23 +200,25 @@ void move(int v){
 void press_mouse(int button, int state, int x, int y){
 	
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
+
+		left_button_state = 1;
+
 		printf("Mouse = (%d, %d) -> Waiting Fish<- \n", x, y);
 		
 		if (0<x && x<50 && 0<y && y<50){
 			cout << "SpawnFish " << fish.size()<< endl;
 			fish.push_back(AquaElem(3,4,35,x,y));
 		}
-		
-		left_button_state = 1;
-		
+			
 		for (int i = 0; i < (int)fish.size(); i++){
 			if (fish[i].isClicked(x, y)){
 				fish_index = i;
+				fish_click = false;
 			}
 		}
-		cout << fish_index << endl;
+		
 	}else{
-		//left_button_state = 0;
+		left_button_state = 0;
 	}
 }
 
@@ -219,7 +227,7 @@ void move_mouse(int x, int y){
 	if (fish[fish_index].isClicked(x, y)){
 		fish[fish_index].HoldClick(x, y);
 	}
-
+	
 	glutPostRedisplay();
 }
 
