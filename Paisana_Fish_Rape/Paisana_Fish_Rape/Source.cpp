@@ -132,7 +132,7 @@ void desenha(){
 	barra();
 	glPopMatrix();
 
-	for (int i = 0; i < fish.size(); i++){
+	for (int i = 0; i < (int)fish.size(); i++){
 		fish[i].Draw();
 	}
 	
@@ -182,7 +182,7 @@ void init(){
 
 void move(int v){
 
-	for (int i = 0; i < fish.size(); i++){
+	for (int i = 0; i < (int)fish.size(); i++){
 		fish[i].Move();
 	}
 
@@ -203,7 +203,7 @@ void press_mouse(int button, int state, int x, int y){
 		
 		left_button_state = 1;
 		
-		for (int i = 0; i < fish.size(); i++){
+		for (int i = 0; i < (int)fish.size(); i++){
 			if (fish[i].isClicked(x, y)){
 				fish_index = i;
 			}

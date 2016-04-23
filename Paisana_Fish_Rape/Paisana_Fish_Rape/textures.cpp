@@ -64,7 +64,7 @@ int LoadBMP(char *file, int id){
 	}
 	// Inverte os valores de R e B
 	int t, i;
-	for (i = 0; i < imageSize; i += 3)
+	for (i = 0; i < (int)imageSize; i += 3)
 	{
 
 		t = image[i];
