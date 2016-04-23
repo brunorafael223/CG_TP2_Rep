@@ -12,7 +12,7 @@ AquaElem::AquaElem(int t, int m, int e, int xi, int yi){
 	mask = m;
 	dir = true;
 	time = 0;
-	move = 1;
+	runtime = 0;
 }
 
 void AquaElem::Draw(void){
@@ -79,16 +79,8 @@ void AquaElem::Move(){
 	}
 }
 void AquaElem::Run(){
-	//if (clicked){
-	//	px += 5;
-	//	py = my + 2 * sin(time*PI / 180);
-	//	time += 100;
-	//	if (px > mx + 50){
-	//		time = 0;
-	//		clicked = false;
-
-	//	}
-	//}
+	py = my + 2*sin(runtime*PI / 180);
+	runtime += 100; // 
 }
 bool AquaElem::isClicked(int x, int y){
 	if ((px - edge) < x && x < (px + edge) && (py - edge) < y && y < (py + edge)){

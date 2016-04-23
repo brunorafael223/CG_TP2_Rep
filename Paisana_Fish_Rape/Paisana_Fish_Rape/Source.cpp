@@ -185,7 +185,7 @@ void move(int v){
 
 	for (int i = 0; i < (int)fish.size(); i++){
 		if(i==fish_index && left_button_state){
-			
+			fish[i].Run();
 		}else{
 			fish[i].Move();
 		}

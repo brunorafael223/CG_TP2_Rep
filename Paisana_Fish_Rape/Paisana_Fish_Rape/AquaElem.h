@@ -7,6 +7,7 @@ class AquaElem {
 	int edge;
 	bool dir, move;
 	int time;
+	int runtime;
 
 public:
 	AquaElem(int t, int m, int e, int xi, int yi);
