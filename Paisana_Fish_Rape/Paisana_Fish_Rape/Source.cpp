@@ -190,7 +190,7 @@ void move(int v){
 	glutTimerFunc(30, move, 1);
 }
 
-asdasdasd
+
 void press_mouse(int button, int state, int x, int y){
 	
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
