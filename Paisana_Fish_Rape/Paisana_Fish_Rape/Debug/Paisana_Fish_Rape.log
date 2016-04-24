@@ -1,15 +1,16 @@
-﻿Build started 23/04/2016 22:55:05.
+﻿Build started 24/04/2016 03:13:52.
      1>Project "C:\Users\Mr. Pudim\Desktop\CG_TP2_Rep\Paisana_Fish_Rape\Paisana_Fish_Rape\Paisana_Fish_Rape.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /D _MBCS /D _CRT_SECURE_NO_WARNINGS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Mr. Pudim\Desktop\CG_TP2_Rep\Paisana_Fish_Rape\Debug\Paisana_Fish_Rape.exe" /INCREMENTAL /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Mr. Pudim\Desktop\CG_TP2_Rep\Paisana_Fish_Rape\Debug\Paisana_Fish_Rape.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Mr. Pudim\Desktop\CG_TP2_Rep\Paisana_Fish_Rape\Debug\Paisana_Fish_Rape.lib" /MACHINE:X86 Debug\AquaElem.obj
-         Debug\Source.obj
-         Debug\textures.obj
-         Paisana_Fish_Rape.vcxproj -> C:\Users\Mr. Pudim\Desktop\CG_TP2_Rep\Paisana_Fish_Rape\Debug\Paisana_Fish_Rape.exe
-     1>Done Building Project "C:\Users\Mr. Pudim\Desktop\CG_TP2_Rep\Paisana_Fish_Rape\Paisana_Fish_Rape\Paisana_Fish_Rape.vcxproj" (Build target(s)).
+     1>c:\users\mr. pudim\desktop\cg_tp2_rep\paisana_fish_rape\paisana_fish_rape\source.cpp(217): error C2664: 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<AquaElem>>> std::vector<AquaElem,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<AquaElem>>>,std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<AquaElem>>>)' : cannot convert argument 1 from 'int' to 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<AquaElem>>>'
+                 with
+                 [
+                     _Ty=AquaElem
+                 ]
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>Done Building Project "C:\Users\Mr. Pudim\Desktop\CG_TP2_Rep\Paisana_Fish_Rape\Paisana_Fish_Rape\Paisana_Fish_Rape.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.87
+Time Elapsed 00:00:00.56

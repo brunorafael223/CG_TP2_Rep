@@ -14,7 +14,17 @@ AquaElem::AquaElem(int t, int m, int e, int xi, int yi){
 	time = 0;
 	runtime = 0;
 }
-
+void AquaElem::SetProperties(int t, int m, int e, int xi, int yi){
+	type = t;
+	px = xi;
+	py = yi;
+	my = yi;
+	edge = e;
+	mask = m;
+	dir = true;
+	time = 0;
+	runtime = 0;
+}
 void AquaElem::Draw(void){
 	int direction = 1;
 	if (dir){ direction = 1; }
@@ -80,7 +90,7 @@ void AquaElem::Move(){
 }
 void AquaElem::Run(){
 	py = my + 2*sin(runtime*PI / 180);
-	runtime += 100; // 
+	runtime += 100; 
 }
 bool AquaElem::isClicked(int x, int y){
 	if ((px - edge) < x && x < (px + edge) && (py - edge) < y && y < (py + edge)){
@@ -97,6 +107,57 @@ void AquaElem::HoldClick(int x, int y){
 	py = y;
 	time = 0;
 }
+int AquaElem::getPositionX(){
+	return(px);
+}
+int AquaElem::getPositionY(){
+	return(py);
+}
+
+Hunter::Hunter():AquaElem(0, 0, 0, 0, 0){
+	prey = 0;
+	prey_d=1000;
+	prey_x = 0;
+	prey_y = 0;
+}
+void Hunter::Scout(int i,int x, int y){ //Procura qual o peixe mais próximo e segue as coordenadas dele num passo realtivamente mais rapido ..
+	int d = sqrt((px - x)*(px - x) + abs(py - y)*(px - x));
+	if (d < prey_d)
+	{
+		prey = i;
+		prey_x = x;
+		prey_y = y;
+		
+	}	
+}
+void Hunter::Hunt(){  //Segue a presa
+	if (prey != -1){
+		//printf("\nPrey:fish %d (x,y)=(%d,%d)", prey, prey_x, prey_y);
+		
+		if (px < prey_x){
+			px++; dir = true;
+		}
+		else{
+			px--; dir = false;
+		}
+		
+		if (py < prey_y){
+			py++;
+		}else{
+			py--;
+		}
+	}
+
+}
+int Hunter::Eat(){
+	if ((px - edge) < prey_x && prey_x < (px + edge) && (py - edge) < prey_y && prey_y < (py + edge)){
+		return(prey);
+	}
+	else{
+		return(-1);
+	}
+}
+
 AquaElem::~AquaElem()
 {
 }
